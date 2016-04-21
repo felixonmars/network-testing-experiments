@@ -1,0 +1,26 @@
+metadata:
+    name: test
+    description: "Network Adapter Testing"
+    format: "Lava-Test-Shell Test Definition 1.0"
+    os:
+        - deepin
+    devices:
+        - ipxe-bulbasaur
+    environment:
+        - lava-test-shell
+
+install:
+    deps:
+        - curl
+        - realpath
+        - ntpdate
+        - lsb-release
+        - usbutils
+
+run:
+    steps:
+        - echo "hello"
+
+parse:
+    pattern: "(?P<test_case_id>.*-*):\\s+(?P<result>hello)"
+
